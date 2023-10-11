@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard.jsx";
+import NavBar from "./components/NavBar.jsx";
 
 const pokemonList = [
   {
@@ -30,41 +31,19 @@ const pokemonList = [
 function App() {
   const [index, setIndex] = useState(0);
 
-  const next = () => setIndex(index + 1);
-  const previous = () => setIndex(index - 1);
-
-  if (index == 0) {
-    return (
-      <>
-        <PokemonCard
-          imgSrc={pokemonList[index].imgSrc}
-          name={pokemonList[index].name}
-        />
-        <button onClick={next}>Suivant</button>
-      </>
-    );
-  } else if (index == pokemonList.length - 1) {
-    return (
-      <>
-        <PokemonCard
-          imgSrc={pokemonList[index].imgSrc}
-          name={pokemonList[index].name}
-        />
-        <button onClick={previous}>Précédent</button>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <PokemonCard
-          imgSrc={pokemonList[index].imgSrc}
-          name={pokemonList[index].name}
-        />
-        <button onClick={previous}>Précédent</button>
-        <button onClick={next}>Suivant</button>
-      </>
-    );
-  }
+  return (
+    <>
+      <PokemonCard
+        imgSrc={pokemonList[index].imgSrc}
+        name={pokemonList[index].name}
+      />
+      <NavBar
+        setIndex={setIndex}
+        index={index}
+        pokemonListLength={pokemonList.length}
+      />
+    </>
+  );
 }
 
 export default App;
