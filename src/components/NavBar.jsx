@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import PokemonCard from "./PokemonCard";
 
 function NavBar({ setIndex, data }) {
+  console.log(data);
   return (
     <>
       {data.map((pokemon) => (
