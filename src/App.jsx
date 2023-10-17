@@ -40,7 +40,7 @@ function App() {
         imgSrc={pokemonList[index].imgSrc}
         name={pokemonList[index].name}
       />
-      <NavBar setIndex={setIndex} name={pokemonList.name} data={pokemonList} />
+      <NavBar setIndex={setIndex} index={index} data={pokemonList} />
     </>
   );
 }

@@ -1,6 +1,9 @@
 import PropTypes from "prop-types";
 
-function NavBar({ setIndex, data }) {
+function NavBar({ setIndex, index, data }) {
+  {
+    index === 3 ? alert("Pika Pikachu !!!") : "";
+  }
   return (
     <>
       {data.map((pokemon) => (
@@ -17,6 +20,7 @@ function NavBar({ setIndex, data }) {
 
 NavBar.propTypes = {
   setIndex: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
   data: PropTypes.array.isRequired,
 };
 
