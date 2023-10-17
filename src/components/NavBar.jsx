@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
-import PokemonCard from "./PokemonCard";
 
 function NavBar({ setIndex, data }) {
-  console.log(data);
   return (
     <>
       {data.map((pokemon) => (
@@ -19,8 +17,6 @@ function NavBar({ setIndex, data }) {
 
 NavBar.propTypes = {
   setIndex: PropTypes.func.isRequired,
-  index: PropTypes.number.isRequired,
-  pokemonListLength: PropTypes.number.isRequired,
   data: PropTypes.array.isRequired,
 };
 
